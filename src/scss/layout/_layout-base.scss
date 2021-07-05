@@ -1,0 +1,49 @@
+/*--------------------------------------------------------------
+* layoutの基本設定
+----------------------------------------------------------------*/
+
+section {
+  padding-top: 36px;
+  padding-bottom: 40px;
+
+  @include mq(md){
+    padding-top: 48px;
+    padding-bottom: 60px;
+  }
+
+}
+
+.wrapper {
+  padding: 0 8px;
+}
+
+.inner {
+  max-width: 1280px;
+  padding: 0 8px;
+  margin: 0 auto;
+
+  @include mq(md){
+    padding: 0 40px;
+  }
+}
+
+.inner1 {
+
+  @include mq(md){
+    max-width: 1040px;
+    margin: 0 auto;
+  }
+
+}
+
+
+
+.inner2 {
+  max-width: 1060px;
+  padding: 0 8px;
+  margin: 0 auto;
+
+  @include mq(md){
+    padding: 0 40px;
+  }
+}

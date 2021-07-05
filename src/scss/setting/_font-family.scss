@@ -1,0 +1,111 @@
+/*--------------------------------------------------------------
+* フォントのimport
+----------------------------------------------------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
+
+
+/*--------------------------------------------------------------
+* 使用font の変数
+----------------------------------------------------------------*/
+
+//本文、見出し用 日本語書体
+$japanFont: 'Noto Sans JP';
+
+//本文、見出し用 英語書体
+$enFont: 'Source Sans Pro';
+
+
+/*--------------------------------------------------------------
+* フォントサイズ の変数
+----------------------------------------------------------------*/
+
+$pc-h1: 5.6rem;  //大見出し
+$pc-h2: 4.8rem;  //中見出し
+$pc-h3: 3.6rem;  //子見出し
+$pc-h4: 2.4rem;  //見出し
+$pc-h5: 1.8rem;  
+$pc-h6: 1.6rem;  
+
+$pc-base: 1.4rem; //PC本文
+
+$sp-h1: 5.6rem;  //大見出し
+$sp-h2: 4.8rem;  //中見出し
+$sp-h3: 3.6rem;  //子見出し
+$sp-h4: 2.4rem;  //見出し
+$sp-h5: 1.8rem;  
+$sp-h6: 1.6rem;  
+
+$sp-base: 1.8rem;//sp本文
+
+.pc-h1 {
+  font-size: $pc-h1;
+}
+
+.pc-h2 {
+  font-size: $pc-h2;
+}
+
+.pc-h3 {
+  font-size: $pc-h3;
+}
+
+.pc-h4 {
+  font-size: $pc-h4;
+
+  @include mq(md){
+    font-size: $pc-h3;
+  }
+}
+
+.pc-h5 {
+  font-size: $pc-h5;
+}
+
+.pc-h6 {
+  font-size: $pc-h6;
+}
+
+.pc-p {
+  font-size: $pc-base; //PC本文;
+}
+
+.sp-h1 {
+  font-size: $sp-h1;
+}
+
+.sp-h2 {
+  font-size: $sp-h2;
+}
+
+.sp-h3 {
+  font-size: $sp-h3;
+}
+
+.sp-h4 {
+  font-size: $sp-h4;
+
+  @include mq(md){
+    font-size: $pc-h3;
+  }
+
+}
+
+.sp-h5 {
+  font-size: $sp-h5;
+}
+
+.sp-h6 {
+  font-size: $sp-h6;
+}
+
+.sp-p {
+  font-size: $sp-base; //SP本文;
+}
+
+
+
+
+

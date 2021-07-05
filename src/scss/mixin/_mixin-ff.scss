@@ -1,0 +1,13 @@
+
+//使用するフォントのfont-weight, letter-spacing,line-height パターンを管理
+//font-sizeは引数を利用
+
+
+@mixin h1-titleSet($fz) {
+  font-family: $enFont, sans-serif;
+  font-size: $fz;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+}
+

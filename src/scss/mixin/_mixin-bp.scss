@@ -1,0 +1,34 @@
+//メディアクエリの設定
+
+$screen-xxl: 1400px;
+$screen-xl: 1200px;
+$screen-lg: 992px;
+$screen-md: 768px;
+$screen-sm: 576px;
+$screen-xs: 480px;
+$screen-xxs: 361px;
+
+$bp-list: (
+
+ xxs: screen and (min-width: #{$screen-xxs}),
+ xs: screen and (min-width: #{$screen-xs}),
+ sm: screen and (min-width: #{$screen-sm}),
+ md: screen and (min-width: #{$screen-md}),
+ lg: screen and (min-width: #{$screen-lg}),
+ xl: screen and (min-width: #{$screen-xl}),
+ xxl: screen and (min-width: #{$screen-xxl}),
+ 
+) !default;
+
+@mixin mq($breakpoint) {
+    
+  @media #{map-get($bp-list, $breakpoint)} {
+    @content;
+  }
+}
+
+
+
+
+
+

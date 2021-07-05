@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="format-detection" content="telephone=no">
+  <!-- SEO ======================================================================-->
+  <title>第一生命注文ページ</title>
+  <meta name="description" content="ページへの説明">
+  <meta name="keywords" content="検索用、キーワード">
+  <meta name="robots" content="noindex">
+
+  <link rel="stylesheet" href="./dist/css/destyle.css">
+  <link rel="stylesheet" href="./dist/css/styles.min.css">
+
+  <!-- Favicon ======================================================================-->
+  <link rel="icon" href="./dist/img/favicon.ico">
+
+</head>
+<body class="index">
+
+  <!-- svg ======================================================================-->
+  <svg display="none">
+    <defs>
+      <symbol id="logo" viewBox="0 0 155.63 41.89">
+        <path d="M1,6.43H9.31V38.9H29.08V46H1Z" transform="translate(-1.04 -5.22)"/><path d="M65.12,42.5q-4.48,4.62-13,4.62t-13-4.62q-6-5.67-6-16.33,0-10.87,6-16.33,4.49-4.62,13-4.62t13,4.62q6,5.46,6,16.33Q71.11,36.84,65.12,42.5Zm-5.17-6q2.88-3.63,2.89-10.31T60,15.87a9.44,9.44,0,0,0-7.8-3.64,9.55,9.55,0,0,0-7.84,3.63q-2.94,3.62-2.93,10.31t2.93,10.31a9.55,9.55,0,0,0,7.84,3.63A9.46,9.46,0,0,0,60,36.48Z" transform="translate(-1.04 -5.22)"/><path d="M104,18.78a7.73,7.73,0,0,0-4.59-5.66,11.28,11.28,0,0,0-4.54-.89,9.83,9.83,0,0,0-7.85,3.61Q84,19.44,84,26.68T87.3,37a11,11,0,0,0,7.57,3,9.86,9.86,0,0,0,6.83-2.39A10.3,10.3,0,0,0,105,31.38H95.81V24.77H112.3V46h-5.47l-.84-5a18.79,18.79,0,0,1-4.29,4,15.16,15.16,0,0,1-8.06,2,16.75,16.75,0,0,1-12.89-5.45q-5.23-5.48-5.24-15t5.29-15.4q5.3-5.81,14-5.8,7.54,0,12.13,3.83a14.24,14.24,0,0,1,5.25,9.54Z" transform="translate(-1.04 -5.22)"/><path d="M150.68,42.5q-4.49,4.62-13,4.62t-13-4.62q-6-5.67-6-16.33,0-10.87,6-16.33,4.49-4.62,13-4.62t13,4.62q6,5.46,6,16.33Q156.67,36.84,150.68,42.5Zm-5.17-6q2.88-3.63,2.89-10.31t-2.89-10.3a9.41,9.41,0,0,0-7.8-3.64,9.55,9.55,0,0,0-7.84,3.63q-2.93,3.62-2.93,10.31t2.93,10.31a9.55,9.55,0,0,0,7.84,3.63A9.43,9.43,0,0,0,145.51,36.48Z" transform="translate(-1.04 -5.22)"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <div class="container" id="index">
+
+    <!-- Header ======================================================================-->
+    <header class="globalheader">
+      <div class="wrapper flex al-center">
+        <h1 class="globalheader-logo">
+          <svg>
+            <use xlink:href="#logo"></use>
+          </svg>
+        </h1>
+        <!-- /.logo -->
+
+
+      </div>
+      <!-- /.wrapper -->
+      
+    </header>
+    <!-- /.header -->
+  
+    <!-- gnav ======================================================================-->
+    <nav class="gnav">
+      
+    </nav>
+     <!-- /.gnav -->
+      
+    <!-- Main content ======================================================================-->
+    <main class="main" role="main">
+
+    <!-- read ======================================================================-->
+      <section class="read">
+        <div class="inner">
+          <h2 class="heading accent-color pc-h4">地域支部優待キャンペーン</h2>
+          <p class="text main-color">
+            ここにはテキストが入ります。ここにはテキストが入ります。ここにはテキストが入ります。ここにはテキストが入ります。ここにはテキストが入ります。ここにはテキストが入ります。
+          </p>
+        </div>
+      </section>
+    <!-- /.read -->
+
+    <!-- 商品一覧 ======================================================================-->
+      <section class="product main-color">
+        <div class="inner2">
+          <h2 class="heading sp-h4">
+            商品紹介
+          </h2>
+
+          <div v-for="item in items" :key="item.id">
+            
+            <h3 class="title sp-h4">
+              {{item.title}}
+            </h3>
+  
+            <div class="item-list">
+              <ul class="list" >
+                <li class="item" v-for="product in item.products" :key="product.id">
+                  <figure>
+                    <img :src="product.image" alt="商品画像" decoding="async">
+                    <figcaption>
+                      <div class="item-number">{{product.itemNumber}}</div>
+                      <h4 class="item-name">{{product.name}}</h4>
+                      <p class="item-description">
+                        {{product.itemDescription}}
+                      </p>
+                    </figcaption>
+                  </figure>
+                  <div class="btn" >
+                    <a href="#contact" :data-id="product.itemNumber" :data-name="product.name" @click="btnClicked">こちらの商品を注文する</a>
+                  </div>
+                  <!-- /.button -->
+                </li>
+              </ul>
+              <!-- /.list -->
+  
+            </div>
+            <!-- /.item-list -->
+
+          </div>
+          
+          <div class="pagetop-btn">
+            <a href="#" @click="scrollAnimation">PAGE TOP ↑</a>
+          </div>
+
+        </div>
+        <!-- /.inner2 -->
+
+      </section>
+      <!-- /.product -->
+
+      <section class="contact main-color"  id="contact">
+        <div class="inner2">
+          <h2 class="heading sp-h4 ">
+            申込みフォーム
+          </h2>
+          <form action="" class="form h-adr">
+
+            <!-- 商品名 -->
+            <div class="contact_form-wrap">
+              <label class="contact_form_label-text auto">商品名</label>
+              <div class="contact_form_field_wrap req">
+                <input type="text" class="input_text" id="productname" name="productname" required="" v-model="inputProductName" readonly>
+                <span for="productName"></span>
+              </div>
+            </div>
+            <!-- /.contact_form-wrap -->
+
+            <!-- 商品番号 -->
+            <div class="contact_form-wrap">
+              <label class="contact_form_label-text auto">商品番号</label>
+              <div class="contact_form_field_wrap req">
+                <input type="number" class="input_text" id="productid" name="productid" required="" v-model="inputProductId" readonly>
+                <span for="productid"></span>
+              </div>
+            </div>
+            <!-- /.contact_form-wrap -->
+
+
+            <!-- 氏名 -->
+            <div class="contact_form-wrap">
+              <label for="name" class="contact_form_label-text req">お名前</label>
+              <div class="contact_form_field_wrap req name">
+                <input class="input_text " type="text" name="name" id="name" autocomplete="name" required="">
+              </div>
+              <!-- <p class="contact_form_explanation">例）山田 太郎</p> -->
+            </div>
+            <!-- /.contact_form-wrap -->
+            <!-- メールアドレス -->
+            <div class="contact_form-wrap">
+              <label for="email" class="contact_form_label-text req">メールアドレス</label>
+              <div class="contact_form_field_wrap req ">
+                <input type="email" class="input_text" id="email" name="email" autocomplete="email" required="">
+                <span for="email"></span>
+              </div>
+            </div>
+            <!-- /.contact_form-wrap -->
+            <!-- 住所 -->
+            <div class="contact_form-wrap address">
+              <label for="address" class="contact_form_label-text req">お届け先住所</label>
+              <div class="contact_form_field_wrap address">
+                <span class="p-country-name" style="display:none;">Japan</span>
+                <div class="addressmark">
+                  <input type="text" inputmode="numeric" class="p-postal-code input_text" id="address" name="address" size="8" maxlength="8" autocomplete="postal-code">
+                </div>
+                <p >例）​1010001</p>
+                <h5 class="address-text">都道府県:</h5>
+                <input type="text" class="p-region input_text" name="address-level1" autocomplete="address-level1" >
+                <h5 class="address-text">住所1:</h5>
+                <input type="text" class="p-locality p-street-address p-extended-address input_text" name="address-line2" autocomplete="address-line2">
+                <span for="address"></span>
+                <h5 class="address-text">住所2:</h5>
+                <input type="text" class="input_text">
+                <span for="address"></span>
+              </div>
+            </div>
+            <!-- /.contact_form-wrap -->
+
+            <!-- お客様番号 -->
+            <div class="contact_form-wrap">
+              <label for="selfid" class="contact_form_label-text req">お客様番号</label>
+              <div class="contact_form_field_wrap req selfid">
+                <input type="text" class="input_text" id="selfid" name="selfid" required="">
+                <span for="selfid"></span>
+              </div>
+            </div>
+            <!-- /.contact_form-wrap -->
+
+
+            
+            <div class="privacy_policy">
+
+              <div class="privacy_policy-wrap">
+
+                <h2>プライバシーポリシー</h2>
+                <p>◯◯◯（以下、「当サイト」と言います。）では、お客様からお預かりする個人情報の重要性を強く認識し、個人情報の保護に関する法律、その他の関係法令を遵守すると共に、以下に定めるプライバシーポリシーに従って、個人情報を安全かつ適切に取り扱うことを宣言いたします。</p>
+                <h3>個人情報の定義</h3>
+                <p>本プライバシーポリシーにおいて、個人情報とは生存する個人に関する情報であって、氏名、生年月日、住所、電話番号、メールアドレス等、特定の個人を識別することができるものをいいます。</p>
+                <h3>個人情報の管理</h3>
+                <p>お客様からお預かりした個人情報は、不正アクセス、紛失、漏えい等が起こらないよう、慎重かつ適切に管理します。</p>
+                <h3>個人情報の利用目的</h3>
+                <p>当サイトでは、お客様からのお問い合わせやサービスへのお申し込み等を通じて、お客様の氏名、生年月日、住所、電話番号、メールアドレス等の個人情報をご提供いただく場合があります。その場合は、以下に示す利用目的のために、適正に利用するものと致します。</p>
+                <ul>
+                  <li>お客様からのお問い合わせ等に対応するため。</li>
+                  <li>お客様からお申し込みいただいたサービス等の提供のため。</li>
+                  <li>商品や景品、プレゼント等の発送のため。</li>
+                  <li>当サイトのサービス向上・改善、新サービスを検討するための分析等を行うため。</li>
+                  <li>個人を識別できない形で統計データを作成し、当サイトおよびお客様の参考資料とするため。 </li>
+                </ul>
+                <h3>個人情報の第三者提供</h3>
+                <p>お客様からお預かりした個人情報を、個人情報保護法その他の法令に基づき開示が認められる場合を除き、ご本人様の同意を得ずに第三者に提供することはありません。</p>
+                <h3>個人情報の開示・訂正・削除について</h3>
+                <p>お客様からお預かりした個人情報の開示・訂正・削除をご希望の場合は、ご本人様よりお申し出ください。適切な本人確認を行った後、速やかに対応させていただきます。</p>
+                <h3>Cookie（クッキー）について</h3>
+                <p>Cookie（クッキー）とは、お客様のサイト閲覧履歴を、お客様のコンピュータにデータとして保存しておく仕組みです。</p>
+                <br>
+                <p>当サイトでは、第三者配信事業者である「Googleアドセンス」を利用しておりますが、Cookieを使用することにより、お客様の過去のアクセス情報に基づいて、適切な広告を配信する場合があります。</p>
+                <br>
+                <p>お客様は<a href="https://adssettings.google.com/authenticated">Google広告設定</a>から、Cookieを使用したパーソナライズ広告を無効にすることができます。なお、Cookieに保存されている情報からお客様個人を特定することはできません。</p>
+                <br>
+                <p>また、当サイトは、Amazon.co.jpを宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイトプログラムである「Amazonアソシエイト・プログラム」の参加者です。</p>
+                <h3>アクセス解析ツールについて</h3>
+                <p>当サイトは、Googleが提供するアクセス解析ツール「Googleアナリティクス」を利用しています。Googleアナリティクスは、Cookieを使用することでお客様のトラフィックデータを収集しています。</p>
+                <br>
+                <p>お客様はブラウザの設定でCookieを無効にすることで、トラフィックデータの収集を拒否することができます。なお、トラフィックデータからお客様個人を特定することはできません。詳しくは<a href="https://marketingplatform.google.com/about/analytics/terms/jp/">Googleアナリティクス利用規約</a>をご確認ください。</p>
+                <h3>本ポリシーの変更</h3>
+                <p>当サイトは、法令の制定、改正等により、本ポリシーを適宜見直し、予告なく変更する場合があります。本ポリシーの変更は、変更後の本ポリシーが当サイトに掲載された時点、またはその他の方法により変更後の本ポリシーが閲覧可能となった時点で有効になります。</p>
+
+              </div>
+              <!-- /.privacy_policy-wrap -->
+
+            </div>
+            <!-- /.privacy_policy -->
+            <div class="privacy_policy-checkbox">
+              <label class="checkbox">
+                <input class="checkbox-input" type="checkbox" v-model="submitButton" >
+                <span class="checkbox-dummyinput"></span>
+                <span class="checkbox-labeltext">
+                 プライバシーポリシーの内容を確認し同意します。
+                </span>
+              </label>
+
+            </div>
+            <!-- /.privacy_policy-btn -->
+
+
+            <div class="submit">
+              <button class="btn" type="submit" name="submit" value="send" disabled>入力内容を送信する。</button>
+            </div>
+
+          </form>
+
+        </div>
+        <!-- /.inner2 -->
+
+        <div class="pagetop-btn">
+          <a href="#" @click="scrollAnimation">PAGE TOP ↑</a>
+        </div>
+
+      </section>
+
+
+  
+    </main>
+  
+  <!-- footer  ======================================================================-->
+  
+    <footer class="footer">
+      <div class="wrapper">
+        <p>©testuya tsukuda. All rights reserved.</p>
+      </div>
+      <!-- /.wrapper -->
+    </footer>
+    <!-- /.footer -->
+  
+  
+    <!-- pagetop-btn  ======================================================================-->
+  
+    <!-- <a href="#" class="pagetop-btn" id="pageTop">top</a> -->
+
+  </div>
+  
+
+  
+  <!-- Scripts  ======================================================================-->
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.1/jquery-migrate.min.js" defer></script>
+
+  <script src="dist/js/jquery.inview.min.js" defer></script>
+  <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8" defer></script>
+
+  <script src="./dist/js/script.js" defer></script>
+
+  <script>
+
+    //viewport 360px 未満は360pxのまま固定
+    !(function () {
+        const viewport = document.querySelector('meta[name="viewport"]');
+        function switchViewport() {
+          const value =
+            window.outerWidth > 360
+              ? 'width=device-width,initial-scale=1'
+              : 'width=360';
+          if (viewport.getAttribute('content') !== value) {
+            viewport.setAttribute('content', value);
+          }
+        }
+        addEventListener('resize', switchViewport, false);
+        switchViewport();
+      })();
+
+  </script>
+</body>
+</html>

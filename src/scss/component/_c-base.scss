@@ -1,0 +1,53 @@
+
+
+
+// 共通部分の管理
+
+//a タグの動作設定
+
+a:link, a:visited, a:hover, a:active {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity .3s;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+//clearfixの設定
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+  height: 0;
+  visibility: hidden;
+}
+
+//imgタグの設定
+img {
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+
+.sp {
+  @media (min-width: 769px){  // 768px以上は非表示
+    display: none;
+  }
+
+}
+
+.pc {
+  @media (max-width: 768px){ // // 768px以下は非表示
+    display: none;
+  }
+}
+
+.d-flex {
+  display: flex;
+
+  &.al-center {
+    align-items: center;
+  }
+}

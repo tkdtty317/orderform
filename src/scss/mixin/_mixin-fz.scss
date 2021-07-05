@@ -1,0 +1,12 @@
+//フォントサイズの可変設定
+
+//基準となるサイズを設定 (1200px)
+@function get_vw($size, $viewport:1200){
+  $rate: 100 / $viewport;
+  @return $rate * $size * 1vw;
+}
+
+@mixin fz_vw($font_size:10){
+  font-size: $font_size * 1px;
+  font-size: get_vw($font_size);
+}

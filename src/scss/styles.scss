@@ -1,0 +1,570 @@
+@charset "utf-8";
+
+@import "./mixin/mixin-bp"; //ブレイクポイントのmixin
+@import "./mixin/mixin-fz"; //fontsize可変用のmixin
+@import "./mixin/mixin-ff"; //font設定管理のmixin
+
+@import "./setting/color"; //使用colorの変数管理
+@import "./setting/font-family"; //使用font,font-sizeの変数管理
+
+
+@import "./component/hamburgers/hamburgers.scss"; 
+
+
+@import "./foundation/base";
+
+@import "./layout/layout-base";
+
+@import "./component/comon-parts";
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------------
+* header
+----------------------------------------------------------------*/
+.globalheader {
+  position: fixed;
+  z-index: 10000;
+  width: 100%;
+  padding: 16px 8px;
+  background-color: $accentColor;
+
+  @include mq(md){
+    padding: 32px 8px;
+  }
+
+
+  .wrapper {
+    justify-content: center;
+  }
+
+  .globalheader-logo {
+
+    svg {
+      width: 100%;
+      fill: $mainColor;
+      max-height: 32px;
+    }
+  }
+
+  
+}
+
+
+/*--------------------------------------------------------------
+* main 
+----------------------------------------------------------------*/
+
+.main {
+
+  margin-top: 64px;
+
+  @include mq(md){
+    margin-top: 96px;
+  }
+
+
+/*--------------------------------------------------------------
+* read
+----------------------------------------------------------------*/
+
+  .read {
+    background-color: $baseColor1;
+    line-height: 1.3;
+    
+    .heading {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 8px;
+
+      @include mq(md){
+        margin-bottom: 16px;
+      }
+      
+      &::before,
+      &::after {
+        border-color: $accentColor;
+      }
+    } 
+
+  }
+
+
+/*--------------------------------------------------------------
+* item-list
+----------------------------------------------------------------*/
+
+.product {
+  padding :80px 0;
+
+  @include mq(md){
+    padding :136px 0;
+  }
+
+
+  .pagetop-btn {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -28px;
+  }
+
+
+
+  .item-list {
+
+    .list {
+
+      @include mq(md){
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .item {
+        background-color: $accentColor;
+        padding: 12px 8px 16px 8px;
+        margin-bottom: 32px;
+        display: flex;
+        flex-direction: column;
+
+        @include mq(md){
+          width: calc(50%-32px);
+          padding: 32px 16px 48px 16px ;
+          margin-bottom: 48px;
+        }
+
+
+
+        figure {
+          margin-bottom: 16px;
+          
+          img {
+            width: calc(100vw-16px);
+            height: calc(100vw-16px);
+            object-fit: cover;
+            margin-bottom: 8px;
+
+            @include mq(md){
+              width: 320px;
+              height: 320px;
+              display: block;
+              margin: 0 auto 16px;
+            }
+
+            
+          }
+
+          figcaption {
+
+            .item-number {
+              display: inline-block;
+              background: $baseColor1;
+              padding: 4px 8px;
+              padding-left: 96px;
+              position: relative;
+              color: $accentColor;
+              letter-spacing: 0.12em;
+
+              &::before {
+                content: "商品番号:";
+                position: absolute;
+                left: 8px;
+                letter-spacing: 0.08em;
+              }
+            }
+
+            .item-name {
+              padding: 4px 8px;
+              padding-left: 48px;
+              margin-bottom: 8px;
+              position: relative;
+              color: $mainColor;
+              font-weight: 600;
+              letter-spacing: 0.12em;
+
+              &::before {
+                content: "品名:";
+                position: absolute;
+                left: 0;
+                letter-spacing: 0.08em;
+              }
+
+            }
+
+            .item-description {
+              padding: 24px 0 8px;
+              letter-spacing: 0.12em;
+              line-height: 1.2;
+              position: relative;
+
+              &::before {
+                content: "商品説明:";
+                position: absolute;
+                font-weight: 600;
+                left: 0;
+                top: 0;
+              }
+            }
+          }
+        }
+
+        .btn {
+          background-color: $baseColor1;
+          border-radius: 8px;
+          padding: 8px 8px;
+          color: $accentColor;
+          text-align: center;
+          font-weight: bold;
+          font-size: $sp-h4;
+          margin-top: auto;
+        }
+
+      }
+    }
+  }
+
+}
+
+/*--------------------------------------------------------------
+* contact
+----------------------------------------------------------------*/
+
+.contact {
+  background: $baseColor1;
+  position: relative;
+
+  @include mq(md){
+    padding :136px 0;
+  }
+
+  .heading {
+    margin-bottom: 40px;
+    color: $accentColor;
+
+    @include mq(md){
+      margin-bottom: 80px;
+    }
+
+    &::before,
+    &::after {
+        border-color: $accentColor;
+      }
+  } 
+
+
+
+  .form {
+    padding-bottom: 80px;
+
+    .contact_form-wrap {
+      margin-bottom: 32px;
+
+      @include mq(md){
+        display: flex;
+        justify-content: space-between;
+      }
+
+      &.address {
+        align-items: flex-start;
+
+      }
+      
+      .contact_form_label-text {
+        color: $accentColor;
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        margin-bottom: 12px;
+
+        @include mq(md) {
+          height: 55px;
+          margin-bottom: 0;
+        }
+
+        &.req {
+
+            &::after {
+              content: "必須";
+              display: inline-block;
+              justify-content: center;
+              align-items: center;
+              background-color: $mainColor;
+              color: $accentColor;
+              padding: 4px 8px;
+              font-size: 1.2rem;
+              letter-spacing: 0.15em;
+              font-weight: 500;
+              border-radius: 4px;
+              margin-left: 4px;
+
+             
+            }
+
+        }
+
+        &.auto {
+
+          &::after {
+            content: "自動入力";
+            display: inline-block;
+            justify-content: center;
+            align-items: center;
+            background-color: $mainColor;
+            color: $accentColor;
+            padding: 4px 8px;
+            font-size: 1.2rem;
+            font-weight: 500;
+            border-radius: 4px;
+            margin-left: 4px;
+
+            @include mq(md) {
+              width: 64px;
+              margin-left: 8px;
+              text-align: center;
+            }
+            
+          }
+        }
+      }
+
+      .contact_form_field_wrap {
+
+        @include mq(md){
+         width: 75%;
+         margin-left: auto;
+        }
+
+
+        .addressmark {
+          display: flex;
+          align-items: center;
+
+          &::before {
+            content: "〒";
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: $accentColor;
+            margin-right:8px;
+          }
+
+        }
+        
+
+        .input_text {
+          display: block;
+          position: relative;
+          width: 100%;
+          padding: 12px;
+          background-color: $accentColor;
+          border: 2px solid $mainColor;
+          border-radius: 8px;
+        }
+
+        .address-text {
+          color: $accentColor;
+          font-weight: 500;
+
+        }
+
+        .span {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 64px;
+          background-color: $mainColor;
+          color: $accentColor;
+        }
+
+        &.name {
+          &::after {
+            content:"例）山田 太郎";
+            display: block;
+          }
+        }
+
+        &.email {
+          &::after {
+            content:"例）xxx@OOO.com";
+            display: block;
+          }
+        }
+
+        &.selfid {
+          &::after {
+            content:"例）0000000";
+            display: block;
+          }
+        }
+
+        
+      }
+    }
+
+    .privacy_policy {
+      overflow: auto;
+      border: 2px solid $mainColor;
+      height: 240px;
+      background-color: $subColor;
+      border-radius: 4px;
+
+      .privacy_policy-wrap {
+       padding: 20px 16px;
+      }
+      
+      h2 {
+        text-align: center;
+        font-weight: 600; 
+        margin-bottom: 12px;
+      }
+      
+      h3 {
+        font-weight: 600; 
+        margin-bottom: 8px;
+      }
+
+      p,ul {
+        margin-bottom: 12px;
+      }
+
+      li {
+        margin-bottom: 8px;
+      }
+
+    }
+
+    .privacy_policy-checkbox {
+      margin-top: 24px;
+
+      .checkbox {
+        // padding: 12px 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        margin: 0 auto;
+
+        .checkbox-input {
+          margin: 0;
+          width: 0;
+          opacity: 0;
+
+          &:checked {
+           
+            +.checkbox-dummyinput {
+
+              &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 80%;
+                height: 80%;
+                border-radius: 50%;
+                transform: translate(-50%,-50%);
+                background: $mainColor;
+              }
+            }
+          }
+        }
+
+        .checkbox-dummyinput {
+          position: relative;
+          display: block;
+          width: 20px;
+          height:20px;
+          background: $accentColor;
+          border-radius: 50%;
+          transition: all .15s linear;
+        }
+
+        .checkbox-labeltext {
+          width: 330px;
+          font-size: 1.3rem;
+          letter-spacing: .03em;
+          padding-left:8px;
+          font-weight: 600;
+          color: $accentColor;
+          display: block;
+          
+          @include mq(xs){
+            width: 350px;
+            font-size: 1.4rem;
+          }
+
+          @include mq(lg){
+            width: 400px;
+            font-size: 1.6rem;
+          }
+
+        }
+
+      }
+
+
+    }
+
+    .submit {
+      margin-top: 64px;
+
+      button[type=submit] {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        text-align: center;
+        color: $accentColor;
+        font-weight: bold;
+        background-color: $mainColor;
+        border-radius: 8px;
+        transition: all .3s;
+
+        @include mq(md){
+          width: 60%;
+          margin: 0 auto;
+          padding: 16px;
+        }
+
+        &:disabled {
+          opacity: 0.5;
+        }
+
+
+        &:active {
+          background-color: $baseColor1;
+        }
+      }
+    }
+
+  }
+
+  .pagetop-btn {
+    position: absolute;
+    right: 8px;
+    bottom: 12px;
+    color: $accentColor;
+  }
+
+
+}
+
+
+}
+
+
+/*--------------------------------------------------------------
+* footer
+----------------------------------------------------------------*/
+
+.footer {
+  padding: 32px 0;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+
+

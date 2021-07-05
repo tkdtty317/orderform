@@ -1,0 +1,27 @@
+/*--------------------------------------------------------------
+* 使う色をまとめる
+----------------------------------------------------------------*/
+$mainColor: #555555; //本文カラー 
+
+$accentColor: #fefefe; //白
+
+$subColor: #EEEEEE; //薄いグレー
+
+$baseColor1: #AAAAAA; //濃いグレー
+
+.main-color {
+  color: $mainColor;
+}
+
+.accent-color {
+  color: $accentColor;
+}
+
+.sub-color {
+  color: $subColor;
+}
+
+.base-color {
+  color: $baseColor1;
+}
+
