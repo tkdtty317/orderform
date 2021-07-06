@@ -13,7 +13,7 @@ var app = new Vue({
         id: 1,
         name: "商品名001",
         itemNumber: 11111,
-        image: "../dist/img/megane001.jpeg",
+        image: "./dist/img/megane001.jpeg",
         itemDescription: "ここにはテキストが入ります。ここにはテキストが入ります。ここにはテキストが入ります。ここにはテキストが入ります。ここにはテキストが入ります。ここにはテキストが入ります。ここにはテキストが入ります。ここにはテキストが入ります。"
       }, {
         id: 2,
