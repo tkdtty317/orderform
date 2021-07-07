@@ -1787,6 +1787,16 @@ section {
   border-color: #fefefe;
 }
 
+.main .contact .pagetop-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  color: #fefefe;
+}
+
 .main .contact .form {
   padding-bottom: 80px;
 }
@@ -2029,13 +2039,6 @@ section {
 
 .main .contact .form .submit button[type=submit]:active {
   background-color: #AAAAAA;
-}
-
-.main .contact .pagetop-btn {
-  position: absolute;
-  right: 8px;
-  bottom: 12px;
-  color: #fefefe;
 }
 
 /*--------------------------------------------------------------

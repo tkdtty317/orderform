@@ -270,6 +270,12 @@
       }
   } 
 
+  .pagetop-btn {
+    display: flex;
+    justify-content: flex-end;
+    color: $accentColor;
+  }
+
 
 
   .form {
@@ -554,14 +560,11 @@
       }
     }
 
+    
+    
   }
 
-  .pagetop-btn {
-    position: absolute;
-    right: 8px;
-    bottom: 12px;
-    color: $accentColor;
-  }
+
 
 
 }
