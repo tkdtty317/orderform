@@ -97,7 +97,7 @@
                     </figcaption>
                   </figure>
                   <div class="btn" >
-                    <a href="#contact" :data-id="product.itemNumber" :data-name="product.name" @click="btnClicked">こちらの商品を注文する</a>
+                    <a href="#contact" :data-item="item.id" :data-id="product.itemNumber" :data-name="product.name" @click="btnClicked">こちらの商品を注文する</a>
                   </div>
                   <!-- /.button -->
                 </li>
@@ -145,6 +145,25 @@
               </div>
             </div>
             <!-- /.contact_form-wrap -->
+
+             <!-- optionの設定-->
+             <div class="contact_form-wrap" v-if="itemId == 2">
+              <label class="contact_form_label-text req">お花の色</label>
+              <div class="contact_form_field_wrap req">
+                <select name="colorselect" id="colorselect" class="select">
+                  <option v-for="option in items[1].options" :value="option">
+                    {{option}}
+                  </option>
+                </select>
+                <span for="productid"></span>
+              </div>
+            </div>
+            <!-- /.contact_form-wrap -->
+
+            
+
+
+
 
 
             <!-- 氏名 -->

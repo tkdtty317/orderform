@@ -59,7 +59,8 @@
             image: "./dist/img/poppy-6320719_1920.jpg", 
             itemDescription:"ここにはテキストが入ります。ここにはテキストが入ります。ここにはテキストが入ります。ここにはテキストが入ります。ここにはテキストが入ります。ここにはテキストが入ります。ここにはテキストが入ります。ここにはテキストが入ります。ここにはテキストが入ります。ここにはテキストが入ります。ここにはテキストが入ります。ここにはテキストが入ります。"
           },
-        ]
+        ],
+        options:[ "A", "B","C","D","E"]
       },
       
     ],
@@ -71,6 +72,8 @@
 
     inputProductName: "",
 
+    itemId:"",
+
     
   },
   methods: {
@@ -80,6 +83,7 @@
 
       this.textInput(e);
 
+
       this.scrollAnimation(e);
 
 
@@ -87,15 +91,20 @@
 
  textInput(e){
 
-  let id = e.currentTarget.getAttribute('data-id');
+  let dataId = e.currentTarget.getAttribute('data-id');
+  let itemId = e.currentTarget.getAttribute('data-item');
+
   let name = e.currentTarget.getAttribute('data-name');
 
 
+  this.itemId= "",
   this.inputProductId = "";
-  this.inputProductName = "";
+  this.inputProductName = ""; 
 
-  this.inputProductId = id;
+  this.itemId= itemId;
+  this.inputProductId = dataId;
   this.inputProductName = name;
+
 
  },
 

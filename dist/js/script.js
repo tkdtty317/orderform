@@ -43,13 +43,15 @@ var app = new Vue({
         itemNumber: 55555,
         image: "./dist/img/poppy-6320719_1920.jpg",
         itemDescription: "ここにはテキストが入ります。ここにはテキストが入ります。ここにはテキストが入ります。ここにはテキストが入ります。ここにはテキストが入ります。ここにはテキストが入ります。ここにはテキストが入ります。ここにはテキストが入ります。ここにはテキストが入ります。ここにはテキストが入ります。ここにはテキストが入ります。ここにはテキストが入ります。"
-      }]
+      }],
+      options: ["A", "B", "C", "D", "E"]
     }],
     // 
     submitButton: false,
     //商品番号入力項目
     inputProductId: "",
-    inputProductName: ""
+    inputProductName: "",
+    itemId: ""
   },
   methods: {
     btnClicked: function btnClicked(e) {
@@ -57,11 +59,13 @@ var app = new Vue({
       this.scrollAnimation(e);
     },
     textInput: function textInput(e) {
-      var id = e.currentTarget.getAttribute('data-id');
+      var dataId = e.currentTarget.getAttribute('data-id');
+      var itemId = e.currentTarget.getAttribute('data-item');
       var name = e.currentTarget.getAttribute('data-name');
-      this.inputProductId = "";
+      this.itemId = "", this.inputProductId = "";
       this.inputProductName = "";
-      this.inputProductId = id;
+      this.itemId = itemId;
+      this.inputProductId = dataId;
       this.inputProductName = name;
     },
     scrollAnimation: function scrollAnimation(e) {

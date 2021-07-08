@@ -1925,6 +1925,17 @@ section {
   display: block;
 }
 
+.main .contact .form .contact_form-wrap .contact_form_field_wrap .select {
+  display: block;
+  padding: 12px 16px;
+  background-color: #fefefe;
+  border: 2px solid #555555;
+  border-radius: 8px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
 .main .contact .form .privacy_policy {
   overflow: auto;
   border: 2px solid #555555;
